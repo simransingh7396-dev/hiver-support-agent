@@ -1,0 +1,80 @@
+# Hiver AskPlayStation Intent Taxonomy (7 intents)
+# Derived from analyze_intents.py word-frequency + keyword probes on 300 sampled customer msgs
+# Evidence spans askplaystation_threads.jsonl (12121 threads)
+intents:
+  - id: technical_error_bug
+    name: "Technical Error / Bug"
+    description: "Specific PS4 error codes (CE-*, NW-*, WC-*, E-*), crashes, freezing, update failures, system errors"
+    evidence_keywords: ["error", "code", "crash", "freeze", "CE-34878", "CE-38732", "NW-2304", "update", "corrupted"]
+    escalation_tendency: "auto_handle_if_known_fix"
+    escalation_note: "Auto-handle if known code + documented fix exists in resolved memory; else escalate"
+    examples:
+      - "Every time I try to delete the corrupted data it says error has occurred (CE-34669-8) @AskPlayStation"
+      - "Game keeps freezing and crashing error CE-34878-0 @AskPlayStation"
+      - "My PS4 has been freezing and making me reinstall system update 5.00 @AskPlayStation"
+
+  - id: account_access_security
+    name: "Account Access & Security"
+    description: "Login failures, password reset, 2-step verification, banned/suspended, hacked/stolen account"
+    evidence_keywords: ["login", "password", "account", "ban", "banned", "hacked", "stolen", "suspended", "verification"]
+    escalation_tendency: "escalate"
+    escalation_note: "Security-sensitive - always escalate to human (account takeover / credential risk)"
+    examples:
+      - "how come i cant watch the football on NFL network - actually login says account inactive @AskPlayStation"
+      - "I was banned and i will like to know why. @AskPlayStation"
+      - "I think my account is hacked, can you guys help me? @AskPlayStation"
+
+  - id: billing_refunds
+    name: "Billing & Refunds"
+    description: "Unexpected charges, refund requests, wallet/billing errors, subscription auto-renewal disputes"
+    evidence_keywords: ["refund", "charge", "money", "bought", "purchase", "wallet", "subscription", "plus", "E-8200012c"]
+    escalation_tendency: "escalate"
+    escalation_note: "Money-sensitive, policy-bound - escalate (requires human refund approval)"
+    examples:
+      - "why have you randomly taken £49.99 outta my bank account? @AskPlayStation"
+      - "Hi Playstation i was charged with auto-renewal for my plus subscription that i was not aware of. Can i get a refund?"
+      - "Can I get a refund on this game I haven't been able to access in 3 days @AskPlayStation"
+
+  - id: purchase_content_not_delivered
+    name: "Purchase / Content Not Delivered"
+    description: "Bought item/DLC/code not downloading, code invalid/redeem failure, pre-order not received"
+    evidence_keywords: ["download", "store", "psn", "game", "disc", "code", "redeem", "pre-order", "DLC"]
+    escalation_tendency: "auto_handle_first"
+    escalation_note: "Auto-handle with known troubleshooting (restore licenses, download queue) first; escalate if fails"
+    examples:
+      - "It's telling me it isn't a valid code when I redeem it on the PlayStation store @AskPlayStation"
+      - "I bought Lego Star Wars in the PlayStation store but it won't let me download it because the data is corrupted"
+      - "so I'm trying to buy fifa 18 with the new sale, its supposed to be $48 but when i check out it gives me $51.83 @AskPlayStation"
+
+  - id: network_connectivity
+    name: "Network & Connectivity"
+    description: "WiFi/LAN/NAT type, PSN sign-in, connection timeout, online/multiplayer connectivity"
+    evidence_keywords: ["network", "connect", "wifi", "online", "NAT", "connect to server within time limit", "NW-31204"]
+    escalation_tendency: "auto_handle"
+    escalation_note: "Auto-handle - reused scripted fixes seen in data (power cycle, DNS, port forwarding)"
+    examples:
+      - "Not yet. Just cannot connect to the server within the time limit. @AskPlayStation"
+      - "Everytime I try to connect my PS4 to LAN it says connect the LAN cable even though it is already connected @AskPlayStation"
+      - "I live on a campus, and I want someone to guide my network admins on how to make our network NAT Type 2 @AskPlayStation"
+
+  - id: hardware_problem
+    name: "Hardware Problem"
+    description: "Controller, disc drive, console won't turn on, HDMI, overheating, physical defects"
+    evidence_keywords: ["controller", "disc", "console", "turn on", "HDMI", "humming", "stuck", "eject"]
+    escalation_tendency: "escalate"
+    escalation_note: "Needs physical repair/replacement - escalate after basic reset triage"
+    examples:
+      - "my PS4 stopped accepting disks for some reason? Nothing in drive, no sound when trying 2 put in disk @AskPlayStation"
+      - "my playstaion won't recognise I have ps plus #pleasehelp I've tried restoring licenses @AskPlayStation"
+      - "when I turn on my PS4 controller it will work for minute then blue light stays on but unresponsive @AskPlayStation"
+
+  - id: general_inquiry_howto
+    name: "General Inquiry / How-To"
+    description: "Informational questions, how-to, feature requests, status checks, non-urgent guidance"
+    evidence_keywords: ["how", "can i", "do i need", "what is", "when", "is there a way", "guide"]
+    escalation_tendency: "auto_handle"
+    escalation_note: "No risk, just info - auto-handle with knowledge base / help article link"
+    examples:
+      - "So, what's the november ps plus free game? @AskPlayStation"
+      - "Can I upgrade Star Wars Battlefront 2 Standard Edition to Trooper Elite? @AskPlayStation"
+      - "What would restore default settings do to my Playstation? @AskPlayStation"

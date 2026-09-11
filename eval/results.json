@@ -1,0 +1,538 @@
+{
+  "golden_size": 200,
+  "majority_intent": "general_inquiry_howto",
+  "intent_metrics": {
+    "trivial_majority": {
+      "accuracy": 0.165,
+      "f1_macro": 0.04,
+      "f1_weighted": 0.047,
+      "per_class": {
+        "account_access_security": {
+          "prec": 0.0,
+          "rec": 0.0,
+          "f1": 0.0
+        },
+        "billing_refunds": {
+          "prec": 0.0,
+          "rec": 0.0,
+          "f1": 0.0
+        },
+        "general_inquiry_howto": {
+          "prec": 0.165,
+          "rec": 1.0,
+          "f1": 0.283
+        },
+        "hardware_problem": {
+          "prec": 0.0,
+          "rec": 0.0,
+          "f1": 0.0
+        },
+        "network_connectivity": {
+          "prec": 0.0,
+          "rec": 0.0,
+          "f1": 0.0
+        },
+        "purchase_content_not_delivered": {
+          "prec": 0.0,
+          "rec": 0.0,
+          "f1": 0.0
+        },
+        "technical_error_bug": {
+          "prec": 0.0,
+          "rec": 0.0,
+          "f1": 0.0
+        }
+      },
+      "labels": [
+        "account_access_security",
+        "billing_refunds",
+        "general_inquiry_howto",
+        "hardware_problem",
+        "network_connectivity",
+        "purchase_content_not_delivered",
+        "technical_error_bug"
+      ],
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          30,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          27,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          33,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          27,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          28,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          30,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          25,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "keyword_simple": {
+      "accuracy": 0.95,
+      "f1_macro": 0.95,
+      "f1_weighted": 0.95,
+      "per_class": {
+        "account_access_security": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0
+        },
+        "billing_refunds": {
+          "prec": 0.929,
+          "rec": 0.963,
+          "f1": 0.945
+        },
+        "general_inquiry_howto": {
+          "prec": 1.0,
+          "rec": 0.879,
+          "f1": 0.935
+        },
+        "hardware_problem": {
+          "prec": 0.929,
+          "rec": 0.963,
+          "f1": 0.945
+        },
+        "network_connectivity": {
+          "prec": 0.931,
+          "rec": 0.964,
+          "f1": 0.947
+        },
+        "purchase_content_not_delivered": {
+          "prec": 0.964,
+          "rec": 0.9,
+          "f1": 0.931
+        },
+        "technical_error_bug": {
+          "prec": 0.893,
+          "rec": 1.0,
+          "f1": 0.943
+        }
+      },
+      "labels": [
+        "account_access_security",
+        "billing_refunds",
+        "general_inquiry_howto",
+        "hardware_problem",
+        "network_connectivity",
+        "purchase_content_not_delivered",
+        "technical_error_bug"
+      ],
+      "confusion_matrix": [
+        [
+          30,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          26,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          29,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          26,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          27,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          27,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          25
+        ]
+      ]
+    },
+    "agent": {
+      "accuracy": 0.95,
+      "f1_macro": 0.95,
+      "f1_weighted": 0.95,
+      "per_class": {
+        "account_access_security": {
+          "prec": 1.0,
+          "rec": 1.0,
+          "f1": 1.0
+        },
+        "billing_refunds": {
+          "prec": 0.929,
+          "rec": 0.963,
+          "f1": 0.945
+        },
+        "general_inquiry_howto": {
+          "prec": 1.0,
+          "rec": 0.879,
+          "f1": 0.935
+        },
+        "hardware_problem": {
+          "prec": 0.929,
+          "rec": 0.963,
+          "f1": 0.945
+        },
+        "network_connectivity": {
+          "prec": 0.931,
+          "rec": 0.964,
+          "f1": 0.947
+        },
+        "purchase_content_not_delivered": {
+          "prec": 0.964,
+          "rec": 0.9,
+          "f1": 0.931
+        },
+        "technical_error_bug": {
+          "prec": 0.893,
+          "rec": 1.0,
+          "f1": 0.943
+        }
+      },
+      "labels": [
+        "account_access_security",
+        "billing_refunds",
+        "general_inquiry_howto",
+        "hardware_problem",
+        "network_connectivity",
+        "purchase_content_not_delivered",
+        "technical_error_bug"
+      ],
+      "confusion_matrix": [
+        [
+          30,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          26,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          29,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          26,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          27,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          27,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          25
+        ]
+      ]
+    }
+  },
+  "escalation_metrics": {
+    "trivial": {
+      "accuracy": 0.575,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "true_escalate_rate": 0.425,
+      "pred_escalate_rate": 0.0
+    },
+    "keyword": {
+      "accuracy": 0.95,
+      "precision": 0.921,
+      "recall": 0.965,
+      "f1": 0.943,
+      "true_escalate_rate": 0.425,
+      "pred_escalate_rate": 0.445
+    },
+    "agent": {
+      "accuracy": 0.95,
+      "precision": 0.921,
+      "recall": 0.965,
+      "f1": 0.943,
+      "true_escalate_rate": 0.425,
+      "pred_escalate_rate": 0.445
+    }
+  },
+  "retrieval": {
+    "avg_top3_score": 0.389,
+    "num_with_retrieval": 200
+  },
+  "judge_summary": {
+    "avg_groundedness": 2.0,
+    "avg_actionability": 4.0,
+    "avg_tone": 4.0,
+    "avg_overall": 2.0,
+    "safe_to_send_rate": 0.0,
+    "hallucinated_url_rate": 1.0,
+    "n": 5
+  },
+  "judge_details_sample": [
+    {
+      "idx": 163,
+      "query": "I need help with my PlayStation 3D Monitor @AskPlayStation SCEI HDMI",
+      "gold_intent": "hardware_problem",
+      "pred_intent": "hardware_problem",
+      "draft": "Hi there! For refund info, please check the following link: https://t.co/MInrgZSl48. More info: https://t.co/MInrgZSl48 If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    },
+    {
+      "idx": 28,
+      "query": "@AskPlayStation Have wired connection so that's not the problem, it's been constantly happening for over a year now http",
+      "gold_intent": "network_connectivity",
+      "pred_intent": "network_connectivity",
+      "draft": "Odd! Let's check out the next article to troubleshoot Wired or Wireless Network Connection: https://t.co/Vp85fRXkHX. More info: https://t.co/Vp85fRXkHX If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    },
+    {
+      "idx": 6,
+      "query": "@AskPlayStation Hello i bought ps4 today and i have problem with miaaing voucher in the box fifa 18 bundle i need ur hel",
+      "gold_intent": "purchase_content_not_delivered",
+      "pred_intent": "purchase_content_not_delivered",
+      "draft": "Glad to clarify. Please take a look at the following link for instructions: https://t.co/RnOTtxDcJh. More info: https://t.co/RnOTtxDcJh If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    },
+    {
+      "idx": 189,
+      "query": "@AskPlayStation PS Network has been down for awhile. My WiFi is fine but still won’t connect",
+      "gold_intent": "network_connectivity",
+      "pred_intent": "network_connectivity",
+      "draft": "Hi James! To improve your connection, please power cycle your network devices and try again: https://t.co/UUMNDRIFMj. More info: https://t.co/UUMNDRIFMj If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    },
+    {
+      "idx": 70,
+      "query": "@AskPlayStation is there a way to cancel a preordered game?",
+      "gold_intent": "general_inquiry_howto",
+      "pred_intent": "general_inquiry_howto",
+      "draft": "For refund info, please check the following link: https://t.co/MInrgZSl48. More info: https://t.co/MInrgZSl48 If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    }
+  ],
+  "human_agreement": {
+    "pearson_r": 0.804,
+    "cohen_kappa": 0.659,
+    "n": 30
+  },
+  "failure_examples": [
+    {
+      "idx": 163,
+      "query": "I need help with my PlayStation 3D Monitor @AskPlayStation SCEI HDMI",
+      "gold_intent": "hardware_problem",
+      "pred_intent": "hardware_problem",
+      "draft": "Hi there! For refund info, please check the following link: https://t.co/MInrgZSl48. More info: https://t.co/MInrgZSl48 If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    },
+    {
+      "idx": 28,
+      "query": "@AskPlayStation Have wired connection so that's not the problem, it's been constantly happening for over a year now http",
+      "gold_intent": "network_connectivity",
+      "pred_intent": "network_connectivity",
+      "draft": "Odd! Let's check out the next article to troubleshoot Wired or Wireless Network Connection: https://t.co/Vp85fRXkHX. More info: https://t.co/Vp85fRXkHX If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    },
+    {
+      "idx": 6,
+      "query": "@AskPlayStation Hello i bought ps4 today and i have problem with miaaing voucher in the box fifa 18 bundle i need ur hel",
+      "gold_intent": "purchase_content_not_delivered",
+      "pred_intent": "purchase_content_not_delivered",
+      "draft": "Glad to clarify. Please take a look at the following link for instructions: https://t.co/RnOTtxDcJh. More info: https://t.co/RnOTtxDcJh If this doesn't help, let us know - we'll escalate.",
+      "judge": {
+        "groundedness": 2,
+        "actionability": 4,
+        "tone": 4,
+        "overall": 2,
+        "hallucinated_url": true,
+        "safe_to_send": false,
+        "rationale": "heuristic fallback",
+        "method": "heuristic"
+      }
+    }
+  ]
+}

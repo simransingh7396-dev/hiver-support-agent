@@ -1,0 +1,48 @@
+{
+  "brand": "AskPlayStation",
+  "num_intents": 7,
+  "intents": [
+    {
+      "id": "technical_error_bug",
+      "name": "Technical Error / Bug",
+      "escalation_default": false,
+      "escalation_reason": "auto_handle_if_known_fix"
+    },
+    {
+      "id": "account_access_security",
+      "name": "Account Access & Security",
+      "escalation_default": true,
+      "escalation_reason": "security_sensitive"
+    },
+    {
+      "id": "billing_refunds",
+      "name": "Billing & Refunds",
+      "escalation_default": true,
+      "escalation_reason": "money_sensitive_policy_bound"
+    },
+    {
+      "id": "purchase_content_not_delivered",
+      "name": "Purchase / Content Not Delivered",
+      "escalation_default": false,
+      "escalation_reason": "auto_handle_first_then_escalate"
+    },
+    {
+      "id": "network_connectivity",
+      "name": "Network & Connectivity",
+      "escalation_default": false,
+      "escalation_reason": "scripted_fix_reusable"
+    },
+    {
+      "id": "hardware_problem",
+      "name": "Hardware Problem",
+      "escalation_default": true,
+      "escalation_reason": "needs_physical_repair"
+    },
+    {
+      "id": "general_inquiry_howto",
+      "name": "General Inquiry / How-To",
+      "escalation_default": false,
+      "escalation_reason": "informational_no_risk"
+    }
+  ]
+}

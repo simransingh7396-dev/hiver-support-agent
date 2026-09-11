@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.csv
+!askplaystation_customer_sample.csv
+*.jsonl
+!data/taxonomy.json
+!data/golden.jsonl
+!data/resolved_memory.jsonl
+!data/subsample_2k.jsonl
+!eval/human_judge_30.jsonl
+!eval/results.json
+askplaystation_threads.jsonl
