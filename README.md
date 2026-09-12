@@ -7,27 +7,31 @@ Turn messy Twitter support threads into a **working AI agent** that *classifies 
 ## Quickstart (15-min reproduce)
 
 ```bash
-git clone <your-repo>
+git clone https://github.com/simransingh7396-dev/hiver-support-agent.git
 cd hiver-support-agent
 pip install -r requirements.txt
 
-# 1. Build resolved memory (uses already-built askplaystation_threads.jsonl; ~30s)
-python src/build_memory.py
+# NOTE: data/resolved_memory.jsonl (6,447) + data/subsample_2k.jsonl + data/golden.jsonl (200)
+# are already committed, so you can SKIP steps 1-2 for 15-min reproduce.
+# Only run them if you want to rebuild from scratch (needs askplaystation_threads.jsonl):
+
+# 1. (optional) Build resolved memory (uses askplaystation_threads.jsonl; ~30s)
+# python src/build_memory.py
 # -> data/resolved_memory.jsonl (6,447) + data/subsample_2k.jsonl
 
-# 2. Build golden set (200 stratified, seed 42)
-python src/build_golden.py
+# 2. (optional) Build golden set (200 stratified, seed 42)
+# python src/build_golden.py
 # -> data/golden.jsonl + data/golden_sampling_note.md
 
-# 3. Run harness without LLM (no API key, ~2 min)
+# 3. Run harness without LLM (no API key, ~2 min) — THIS IS THE 15-MIN REPRO
 python eval/harness.py --no-llm --judge-limit 20
 # -> eval/results.json + eval/report.md
-# headline: Intent acc 1.00* (see Report §5 leakage), Escalation F1 0.972, Safe-to-send 0.40
+# headline: Intent acc 0.95 (10/200 hand-corrected), Escalation F1 0.943, Safe-to-send 0.0 (heuristic)
 
-# 4. With LLM (needs .env GEMINI_API_KEY=...)
+# 4. With LLM (needs .env GEMINI_API_KEY=...) — optional
 python src/agent.py --query "@AskPlayStation Game keeps freezing error CE-34878-0"
 python src/agent.py --query "@AskPlayStation I was banned please help"
-python eval/harness.py --judge-limit 5          # uses gemini-3.6-flash, 20/day free tier
+# python eval/harness.py --judge-limit 5          # uses gemini-3.6-flash, 20/day free tier
 ```
 
 Single query output:
@@ -78,9 +82,9 @@ See `data/taxonomy.yaml:1` for keywords, examples, escalation notes.
 - **Harness:** `eval/harness.py` computes `accuracy, F1 macro/weighted, confusion_matrix, escalation prec/rec/F1, retrieval avg_top3, judge (groundedness/actionability/tone/overall)`.
 - **Judge:** `eval/judge.py` LLM `gemini-3.6-flash` (fallback heuristic when quota 429/503). Human agreement: `eval/human_judge_30.jsonl` → Pearson 0.804, Cohen kappa 0.659 (3-way binned), within-1-point 93.3%.
 
-## Headline (honest)
+## Headline (honest, after 10 hand-corrections)
 
-`eval/results.json`: Intent acc 1.00* (leaked), Escalation F1 0.972, Judge overall 2.75, Safe 0.40 — **see REPORT.md §5 "What is misleading"** for why 1.00 is inflated and real human-verified ~0.72. We keep the leak as a teaching artifact.
+`eval/results.json`: Intent acc **0.95** (190/200, 10 corrected), Escalation F1 **0.943**, Judge overall **2.0**, Safe **0.0** (heuristic fallback) — **see REPORT.md §5 "What is misleading"** for why 0.95 is still inflated (only 10/200 hand-fixed; fully hand-labelled would be lower) and why safe gate is strict. Human agreement: **Pearson 0.804, kappa 0.659 (n=30)**.
 
 ## Decisions
 
